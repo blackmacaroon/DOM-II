@@ -5,7 +5,6 @@ navi.addEventListener('mouseover', function(event){
       setTimeout(function(){
             event.target.style.color = "";
       }, 400);
-
 }, false); 
 
 //nav anchors change font color on doubleclick
@@ -13,31 +12,10 @@ navi.addEventListener('dblclick', function(event){
       event.target.style.color = "orange";
 });
 
-
-// const mainNav = document.querySelector('main-navigation');
-// mainNav.addEventListener('keydown', event => {
-//       if(event.isComposing || event.keyCode === 65){
-//             return;
-//       }
-//       mainNav.style.backgroundColor = "green";
-// })
-
-// const testLog = document.querySelector('.event-log-contents');
-const logoRefresh = document.querySelector('.logo-heading');
-logoRefresh.addEventListener('click', () => {
-      window.setTimeout(() => {
-            window.location.reload(true);
-      }, 200);
+//nav prevent default
+navi.addEventListener('click', function(event){
+      event.preventDefault()
 });
-// window.addEventListener('load', (event) => {
-//       testLog.textContent = testLog.textContent + "load\n";
-// });
-// document.addEventListener('readystatechange', (event) => {
-//       testLog.textContent = testLog.textContent + "readystate: ${document.readyState}\n";
-// });
-// document.addEventListener('DOMContentLoaded', (event) => {
-//       testLog.textContent = testLog.textContent + "DOMContentLoaded\n"
-// });
 
 //change img on hover with mouseovere/mouseout
 const busImg = document.querySelector('img');
@@ -48,10 +26,43 @@ busImg.addEventListener('mouseover', () => {
       });
 });
 
+//click bus pic vanish bus pic
+busImg.addEventListener('click', function(event){
+      event.target.style.display = "none"; 
+      setTimeout(() => {
+            event.target.style.display = "";  
+      }, 900); 
+}, false);
 
-//sign up buttons go to google img search
-
-navi.addEventListener('dblclick', function(event){
-      event.target.style.color = "orange";
+//clicking logo refreshes page
+const logoRefresh = document.querySelector('.logo-heading');
+logoRefresh.addEventListener('click', () => {
+      window.setTimeout(() => {
+            window.location.reload(true);
+      }, 200);
 });
+
+//click footer vanish footer
+const foot = document.querySelector('footer');
+foot.addEventListener('click', function(event){
+      event.target.style.display = "none"; 
+      setTimeout(() => {
+            event.target.style.display = "";  
+      }, 900); 
+}, false);
+
+
+
+
+// const mainNav = document.querySelector('body');
+// mainNav.addEventListener('keydown', event => {
+//       if(event.isComposing || event.keyCode === 65){
+//             return;
+//       }
+//       mainNav.style.backgroundColor = "green";
+// })
+
+
+
+// document.documentElement.addEventListener('click', 'p', false);
 
