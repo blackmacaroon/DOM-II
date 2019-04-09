@@ -66,6 +66,27 @@ document.addEventListener('keyup', function (event) {
       }
 });
 
+//wheel
+const headerP2 = document.querySelector('.intro p');
+headerP2.addEventListener("wheel", wheel);
+function wheel() {
+      this.style.fontSize = "35px";
+}
+
+//key down
+const headerP = document.querySelector('p');
+document.addEventListener('keydown', function (event) {
+      if (event.code == 'KeyO') {
+            headerP.style.color = "orange";
+      }
+});
+
+// key up
+document.addEventListener('keyup', function (event) {
+      if (event.code == 'Key)') {
+            headerP.style.color = "";
+      }
+});
 
 
 //trying to get scroll to work
