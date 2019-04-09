@@ -1,4 +1,4 @@
-// Your code goes here
+// nav anchors change color mouseover
 const navi = document.querySelector('nav');
 navi.addEventListener('mouseover', function(event){
       event.target.style.color = "blue";
@@ -7,6 +7,12 @@ navi.addEventListener('mouseover', function(event){
       }, 400);
 
 }, false); 
+
+//nav anchors change font color on doubleclick
+navi.addEventListener('dblclick', function(event){
+      event.target.style.color = "orange";
+});
+
 
 // const mainNav = document.querySelector('main-navigation');
 // mainNav.addEventListener('keydown', event => {
@@ -33,6 +39,7 @@ logoRefresh.addEventListener('click', () => {
 //       testLog.textContent = testLog.textContent + "DOMContentLoaded\n"
 // });
 
+//change img on hover with mouseovere/mouseout
 const busImg = document.querySelector('img');
 busImg.addEventListener('mouseover', () => {
       event.target.setAttribute('src', 'img/funbus.png');
@@ -40,3 +47,11 @@ busImg.addEventListener('mouseover', () => {
             event.target.setAttribute('src', 'img/fun-bus.jpg');      
       });
 });
+
+
+//sign up buttons go to google img search
+
+navi.addEventListener('dblclick', function(event){
+      event.target.style.color = "orange";
+});
+
