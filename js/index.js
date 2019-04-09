@@ -32,3 +32,11 @@ logoRefresh.addEventListener('click', () => {
 // document.addEventListener('DOMContentLoaded', (event) => {
 //       testLog.textContent = testLog.textContent + "DOMContentLoaded\n"
 // });
+
+const busImg = document.querySelector('img');
+busImg.addEventListener('mouseover', () => {
+      event.target.setAttribute('src', 'img/funbus.png');
+      busImg.addEventListener('mouseout', () => {
+            event.target.setAttribute('src', 'img/fun-bus.jpg');      
+      });
+});
