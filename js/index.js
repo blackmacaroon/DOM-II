@@ -53,18 +53,18 @@ foot.addEventListener('click', function (event) {
 
 // key down
 const headerP = document.querySelector('p');
-document.addEventListener('keydown', function(event) {
-    if (event.code == 'KeyZ') {
-        headerP.style.color = "red";
-    }
-  });
+document.addEventListener('keydown', function (event) {
+      if (event.code == 'KeyZ') {
+            headerP.style.color = "red";
+      }
+});
 
 // key up
-document.addEventListener('keyup', function(event) {
-    if (event.code == 'KeyZ') {
-        headerP.style.color = "";
-    }
-  });
+document.addEventListener('keyup', function (event) {
+      if (event.code == 'KeyZ') {
+            headerP.style.color = "";
+      }
+});
 
 
 
