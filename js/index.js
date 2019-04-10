@@ -12,6 +12,7 @@ const contentImg = document.querySelectorAll('.content-section img');
 const imageContent = document.querySelectorAll('.content-destination img');
 const destin = document.querySelectorAll('.destination');
 const foot = document.querySelector('footer');
+const butt = document.querySelectorAll('.btn');
 
 ////////////////////////////////////////////////       events
 
@@ -21,7 +22,7 @@ window.addEventListener('load', event => {
 });
 
 // on click, change any text color in the window
-window.addEventListener('click', function(event) {
+window.addEventListener('click', function (event) {
       event.target.style.color = `rgb(${(Math.random() * 255)}, ${(Math.random() * 255)}, ${(Math.random() * 255)})`;
 });
 
@@ -66,7 +67,7 @@ foot.addEventListener('click', function (event) {
       }, 900);
 }, false);
 
-// key down
+// key down header p rainbow
 document.addEventListener('keydown', function (event) {
       if (event.code == 'KeyR') {
             headerP.style.color = 'red';
@@ -98,46 +99,47 @@ document.addEventListener('keydown', function (event) {
       }
 });
 
-// key up
+// key up header p unrainbow
 document.addEventListener('keyup', function (event) {
       if (event.code == 'KeyR' || event.code == 'KeyO' || event.code == 'KeyG' || event.code == 'KeyP' || event.code == 'KeyB' || event.code == 'KeyY') {
             headerP.style.color = "";
       }
 });
 
-//wheel
+// wheel, allegedly
 headerP2.addEventListener('wheel', wheel);
 function wheel() {
       this.style.fontSize = '35px';
 }
 
 // change nav links to random color and prevent default
-navLink.forEach(function(element) {
-      element.addEventListener('mouseover', function(event) {
+navLink.forEach(function (element) {
+      element.addEventListener('mouseover', function (event) {
             event.target.style.color = `rgb(${(Math.random() * 255)}, ${(Math.random() * 255)}, ${(Math.random() * 255)})`;
       });
-      element.addEventListener('click', function(event){
+      element.addEventListener('click', function (event) {
             event.preventDefault();
       });
 });
 
-contentImg.forEach(function(element) {
-      element.addEventListener('mouseover', function(event) {
+contentImg.forEach(function (element) {
+      element.addEventListener('mouseover', function (event) {
             event.target.style.border = `2px solid rgb(${(Math.random() * 255)}, ${(Math.random() * 255)}, ${(Math.random() * 255)})`;
       });
 });
 
+// focus focus focus blue
 imageContent.forEach(function (element) {
-    element.tabIndex = 1;
-    element.addEventListener('focus', function (event) {
-        event.target.style.border = `rgb()`;
-    });
-    element.addEventListener('blur', function(event) {
-        event.target.style.border = '';
+      element.tabIndex = 1;
+      element.addEventListener('focus', function (event) {
+            event.target.style.border = `12px solid rgb(${(Math.random() * 255)}, ${(Math.random() * 255)}, ${(Math.random() * 255)})`;
+      });
+      element.addEventListener('blur', function (event) {
+            event.target.style.border = '';
       });
 });
 
-button.onclick
+// button.onclick
 
 // if its not an arrow key, why you press?
 // document.addEventListener('keypress', (event) => {
