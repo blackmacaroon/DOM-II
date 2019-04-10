@@ -1,11 +1,12 @@
 
+/////////////////////////////////////////////////      imports? confused where this goes. I ran npm install gsap, I have the most recent version.
+//import TweenMax from "gsap/TweenMax";
 /////////////////////////////////////////////////      variables
 
 const navi = document.querySelector('nav');
 const navLink = document.querySelectorAll('.nav-link');
 const busImg = document.querySelector('.intro img');
 const logoRefresh = document.querySelector('.logo-heading');
-const headerH = document.querySelector('.intro h2');
 const headerP = document.querySelector('p');
 const headerP2 = document.querySelector('.intro p');
 const contentImg = document.querySelectorAll('.content-section img');
@@ -17,9 +18,9 @@ const butt = document.querySelectorAll('.btn');
 ////////////////////////////////////////////////       events
 
 // on load, alert a thing!
-window.addEventListener('load', event => {
-      alert('whatchu want?');
-});
+// window.addEventListener('load', function () {
+//       alert('whatchu want?');
+// });
 
 // on click, change any text color in the window
 window.addEventListener('click', function (event) {
@@ -33,7 +34,7 @@ navi.addEventListener('dblclick', function (event) {
 
 //nav prevent default
 navi.addEventListener('click', function (event) {
-      event.preventDefault()
+      event.preventDefault();
 });
 
 //change img on hover with mouseovere/mouseout
@@ -119,16 +120,21 @@ navLink.forEach(function (element) {
       });
       element.addEventListener('click', function (event) {
             event.preventDefault();
+            TweenMax.to('.nav', 2.5, {x:19, ease: Elastic.easeOut});
       });
+      
 });
 
 contentImg.forEach(function (element) {
       element.addEventListener('mouseover', function (event) {
             event.target.style.border = `2px solid rgb(${(Math.random() * 255)}, ${(Math.random() * 255)}, ${(Math.random() * 255)})`;
       });
+      // element.addEventListener('click', function (event) {
+      //       TweenMax.to('.img-content', 2.5, {y:-30, ease: Elastic.easeOut});
+      // } )
 });
 
-// focus focus focus blue
+// focus blur fat random color border
 imageContent.forEach(function (element) {
       element.tabIndex = 1;
       element.addEventListener('focus', function (event) {
@@ -139,11 +145,11 @@ imageContent.forEach(function (element) {
       });
 });
 
-// button.onclick
 
-// if its not an arrow key, why you press?
+
+// anything but an arrow
 // document.addEventListener('keypress', (event) => {
 //       if(event.keyCode !== 37 || event.keyCode !== 38 || event.keyCode !== 39 || event.keyCode !== 40){
-//         alert('Whachu doin\'\?\n\n' + 'no type here');
+//         alert('teeheeheeee');
 //       }
 //     })
