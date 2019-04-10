@@ -1,22 +1,33 @@
-//      variables
+
+/////////////////////////////////////////////////      variables
+
 const navi = document.querySelector('nav');
 const navLink = document.querySelectorAll('.nav-link');
-const busImg = document.querySelector('img');
+const busImg = document.querySelector('.intro img');
 const logoRefresh = document.querySelector('.logo-heading');
+const headerH = document.querySelector('.intro h2');
+const headerP = document.querySelector('p');
+const headerP2 = document.querySelector('.intro p');
+const contentImg = document.querySelectorAll('.content-section img');
+const imageContent = document.querySelectorAll('.content-destination img');
+const destin = document.querySelectorAll('.destination');
+const foot = document.querySelector('footer');
 
+////////////////////////////////////////////////       events
 
+// on load, alert a thing!
+window.addEventListener('load', event => {
+      alert('whatchu want?');
+});
 
-// nav anchors change color mouseover
-// navi.addEventListener('mouseover', function (event) {
-//       event.target.style.color = "blue";
-//       setTimeout(function () {
-//             event.target.style.color = "";
-//       }, 400);
-// }, false);
+// on click, change any text color in the window
+window.addEventListener('click', function(event) {
+      event.target.style.color = `rgb(${(Math.random() * 255)}, ${(Math.random() * 255)}, ${(Math.random() * 255)})`;
+});
 
 //nav anchors change font color on doubleclick
 navi.addEventListener('dblclick', function (event) {
-      event.target.style.color = "orange";
+      event.target.style.color = 'orange';
 });
 
 //nav prevent default
@@ -25,7 +36,6 @@ navi.addEventListener('click', function (event) {
 });
 
 //change img on hover with mouseovere/mouseout
-
 busImg.addEventListener('mouseover', () => {
       event.target.setAttribute('src', 'img/funbus.png');
       busImg.addEventListener('mouseout', () => {
@@ -35,9 +45,9 @@ busImg.addEventListener('mouseover', () => {
 
 //click bus pic vanish bus pic
 busImg.addEventListener('click', function (event) {
-      event.target.style.display = "none";
+      event.target.style.display = 'none';
       setTimeout(() => {
-            event.target.style.display = "";
+            event.target.style.display = '';
       }, 900);
 }, false);
 
@@ -49,52 +59,59 @@ logoRefresh.addEventListener('click', () => {
 });
 
 //click footer vanish footer
-const foot = document.querySelector('footer');
 foot.addEventListener('click', function (event) {
-      event.target.style.display = "none";
+      event.target.style.display = 'none';
       setTimeout(() => {
-            event.target.style.display = "";
+            event.target.style.display = '';
       }, 900);
 }, false);
 
 // key down
-const headerP = document.querySelector('p');
 document.addEventListener('keydown', function (event) {
-      if (event.code == 'KeyZ') {
-            headerP.style.color = "red";
+      if (event.code == 'KeyR') {
+            headerP.style.color = 'red';
+      }
+});
+document.addEventListener('keydown', function (event) {
+      if (event.code == 'KeyO') {
+            headerP.style.color = 'orange';
+      }
+});
+document.addEventListener('keydown', function (event) {
+      if (event.code == 'KeyG') {
+            headerP.style.color = 'green';
+      }
+});
+document.addEventListener('keydown', function (event) {
+      if (event.code == 'KeyP') {
+            headerP.style.color = 'purple';
+      }
+});
+document.addEventListener('keydown', function (event) {
+      if (event.code == 'KeyY') {
+            headerP.style.color = 'yellow';
+      }
+});
+document.addEventListener('keydown', function (event) {
+      if (event.code == 'KeyB') {
+            headerP.style.color = 'blue';
       }
 });
 
 // key up
 document.addEventListener('keyup', function (event) {
-      if (event.code == 'KeyZ') {
+      if (event.code == 'KeyR' || event.code == 'KeyO' || event.code == 'KeyG' || event.code == 'KeyP' || event.code == 'KeyB' || event.code == 'KeyY') {
             headerP.style.color = "";
       }
 });
 
 //wheel
-const headerP2 = document.querySelector('.intro p');
-headerP2.addEventListener("wheel", wheel);
+headerP2.addEventListener('wheel', wheel);
 function wheel() {
-      this.style.fontSize = "35px";
+      this.style.fontSize = '35px';
 }
 
-//key down
-const headerH = document.querySelector('.intro h2');
-document.addEventListener('keydown', function (event) {
-      if (event.code == 'KeyO') {
-            headerH.style.color = "orange";
-      }
-});
-
-// key up
-document.addEventListener('keyup', function (event) {
-      if (event.code == 'KeyO)') {
-            headerH.style.color = "";
-      }
-});
-
-// change to random color
+// change nav links to random color and prevent default
 navLink.forEach(function(element) {
       element.addEventListener('mouseover', function(event) {
             event.target.style.color = `rgb(${(Math.random() * 255)}, ${(Math.random() * 255)}, ${(Math.random() * 255)})`;
@@ -104,47 +121,27 @@ navLink.forEach(function(element) {
       });
 });
 
-//trying to get scroll to work
+contentImg.forEach(function(element) {
+      element.addEventListener('mouseover', function(event) {
+            event.target.style.border = `2px solid rgb(${(Math.random() * 255)}, ${(Math.random() * 255)}, ${(Math.random() * 255)})`;
+      });
+});
 
-// const scrollPosition = 0;
-// const ticking = false;
-// function doSomething(e) {
-//       e.target.style.display = "none";
-// }
+imageContent.forEach(function (element) {
+    element.tabIndex = 1;
+    element.addEventListener('focus', function (event) {
+        event.target.style.border = `rgb()`;
+    });
+    element.addEventListener('blur', function(event) {
+        event.target.style.border = '';
+      });
+});
 
-// window.addEventListener('scroll', function (e) {
-//       scrollPosition = window.scrollY;
+button.onclick
 
-//       if (!ticking) {
-//             window.requestAnimationFrame(function () {
-//                   doSomething(scrollPosition);
-//                   ticking = false;
-//             });
-
-//             ticking = true;
+// if its not an arrow key, why you press?
+// document.addEventListener('keypress', (event) => {
+//       if(event.keyCode !== 37 || event.keyCode !== 38 || event.keyCode !== 39 || event.keyCode !== 40){
+//         alert('Whachu doin\'\?\n\n' + 'no type here');
 //       }
-// });
-
-// const destinatioSect = document.querySelector('.content-destination');
-// destinatioSect.addEventListener('scroll', function(event){
-//       event.target.style.display = "none"; 
-//       setTimeout(() => {
-//             event.target.style.display = "";  
-//       }, 900); 
-// }, false);
-
-
-//trying to get keydown to work
-
-// const mainNav = document.querySelector('body');
-// mainNav.addEventListener('keydown', event => {
-//       if(event.isComposing || event.keyCode === 65){
-//             return;
-//       }
-//       mainNav.style.backgroundColor = "green";
-// })
-
-
-
-// document.documentElement.addEventListener('click', 'p', false);
-
+//     })
