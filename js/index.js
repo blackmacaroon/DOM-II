@@ -1,11 +1,18 @@
-// nav anchors change color mouseover
+//      variables
 const navi = document.querySelector('nav');
-navi.addEventListener('mouseover', function (event) {
-      event.target.style.color = "blue";
-      setTimeout(function () {
-            event.target.style.color = "";
-      }, 400);
-}, false);
+const navLink = document.querySelectorAll('.nav-link');
+const busImg = document.querySelector('img');
+const logoRefresh = document.querySelector('.logo-heading');
+
+
+
+// nav anchors change color mouseover
+// navi.addEventListener('mouseover', function (event) {
+//       event.target.style.color = "blue";
+//       setTimeout(function () {
+//             event.target.style.color = "";
+//       }, 400);
+// }, false);
 
 //nav anchors change font color on doubleclick
 navi.addEventListener('dblclick', function (event) {
@@ -18,7 +25,7 @@ navi.addEventListener('click', function (event) {
 });
 
 //change img on hover with mouseovere/mouseout
-const busImg = document.querySelector('img');
+
 busImg.addEventListener('mouseover', () => {
       event.target.setAttribute('src', 'img/funbus.png');
       busImg.addEventListener('mouseout', () => {
@@ -35,7 +42,6 @@ busImg.addEventListener('click', function (event) {
 }, false);
 
 //clicking logo refreshes page
-const logoRefresh = document.querySelector('.logo-heading');
 logoRefresh.addEventListener('click', () => {
       window.setTimeout(() => {
             window.location.reload(true);
@@ -74,20 +80,29 @@ function wheel() {
 }
 
 //key down
-const headerP = document.querySelector('p');
+const headerH = document.querySelector('.intro h2');
 document.addEventListener('keydown', function (event) {
       if (event.code == 'KeyO') {
-            headerP.style.color = "orange";
+            headerH.style.color = "orange";
       }
 });
 
 // key up
 document.addEventListener('keyup', function (event) {
-      if (event.code == 'Key)') {
-            headerP.style.color = "";
+      if (event.code == 'KeyO)') {
+            headerH.style.color = "";
       }
 });
 
+// change to random color
+navLink.forEach(function(element) {
+      element.addEventListener('mouseover', function(event) {
+            event.target.style.color = `rgb(${(Math.random() * 255)}, ${(Math.random() * 255)}, ${(Math.random() * 255)})`;
+      });
+      element.addEventListener('click', function(event){
+            event.preventDefault();
+      });
+});
 
 //trying to get scroll to work
 
